@@ -67,8 +67,8 @@ def main():
         'fcn8s': (FCN8s, FCN16s, 1e-14),
     }
     discriminators = {
-        'largefov': (LargeFOV, LargeFOV, 0.1, 1.0), # (model, initmodel, learning_rate, L_bce_weight)
-        'largefov-light': (LargeFOVLight, LargeFOVLight, 0.1, 1.0),
+        'largefov': (LargeFOV, LargeFOV, 1e-5, 0.4), # (model, initmodel, learning_rate, L_bce_weight)
+        'largefov-light': (LargeFOVLight, LargeFOVLight, 1, 1.0),
         'smallfov': (SmallFOV, SmallFOV, 0.1, 0.1),
         'smallfov-light': (SmallFOVLight, SmallFOVLight, 0.2, 1.0),
         'sppdis': (SPPDiscriminator, SPPDiscriminator, 0.1, 1.0),
@@ -153,8 +153,8 @@ def main():
     trainer.extend(
         TestModeEvaluator(
             val_iter, updater, device=args.gpu),
-        trigger=snapshot_interval,
-        invoke_before_training=False)
+        trigger=snapshot_interval)
+        # invoke_before_training=False)
     trainer.extend(
         extensions.snapshot(filename='snapshot_iter_{.updater.iteration}.npz'),
         trigger=snapshot_interval)

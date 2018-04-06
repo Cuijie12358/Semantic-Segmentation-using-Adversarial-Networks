@@ -39,8 +39,7 @@ def bilinear_interpolation_kernel(in_channels, out_channels, ksize):
 def crop_to_target(x, target):
     """Crop variable to target shape.
 
-    Args:
-        x (~chainer.Variable): Input variable of shape :math:`(n, c_I, h, w)`.
+    Args:        x (~chainer.Variable): Input variable of shape :math:`(n, c_I, h, w)`.
         target (~chainer.Variable): Variable with target output shape
             :math:`(n, h, w)` or `(n, c_I, h, w)`.
     """
@@ -55,7 +54,7 @@ def crop_to_target(x, target):
     return x_cropped
             
 
-def global_average_pooling_2d(x, use_cudnn=True):
+def global_average_pooling_2d(x):
     """Spatial global average pooling function.
 
     Args:
@@ -64,4 +63,4 @@ def global_average_pooling_2d(x, use_cudnn=True):
             uses cuDNN as the core implementation.
     """
 
-    return F.average_pooling_2d(x, ksize=(x.shape[2], x.shape[3]), use_cudnn=use_cudnn)
+    return F.average_pooling_2d(x, ksize=(x.shape[2], x.shape[3]))

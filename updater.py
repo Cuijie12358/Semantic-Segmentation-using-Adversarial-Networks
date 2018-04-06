@@ -49,15 +49,15 @@ class GANUpdater(chainer.training.StandardUpdater, UpdaterMixin):
 
     def _get_loss_dis(self):
         batchsize = self.y_fake.data.shape[0]
-        loss = F.softmax_cross_entropy(self.y_real, Variable(self.xp.ones(batchsize, dtype=self.xp.int32), volatile=not self.gen.train))
-        loss += F.softmax_cross_entropy(self.y_fake, Variable(self.xp.zeros(batchsize, dtype=self.xp.int32), volatile=not self.gen.train))
+        loss = F.softmax_cross_entropy(self.y_real, Variable(self.xp.ones(batchsize, dtype=self.xp.int32)))
+        loss += F.softmax_cross_entropy(self.y_fake, Variable(self.xp.zeros(batchsize, dtype=self.xp.int32)))
         chainer.report({'loss': loss}, self.dis)
         return loss
 
     def _get_loss_gen(self):
         batchsize = self.y_fake.data.shape[0]
         L_mce = F.softmax_cross_entropy(self.pred_label_map, self.ground_truth, normalize=False)
-        L_bce = F.softmax_cross_entropy(self.y_fake, Variable(self.xp.ones(batchsize, dtype=self.xp.int32), volatile=not self.gen.train))
+        L_bce = F.softmax_cross_entropy(self.y_fake, Variable(self.xp.ones(batchsize, dtype=self.xp.int32)))
         loss = L_mce + self.L_bce_weight * L_bce
 
         # log report
@@ -105,9 +105,9 @@ class GANUpdater(chainer.training.StandardUpdater, UpdaterMixin):
 
         input_img, ground_truth = self.converter(batch, self.device)
         ground_truth_onehot = self.converter(label_onehot_batch, self.device)
-        input_img = Variable(input_img, volatile=not self.gen.train)
-        ground_truth = Variable(ground_truth, volatile=not self.gen.train)
-        ground_truth_onehot = Variable(ground_truth_onehot, volatile=not self.gen.train)
+        input_img = Variable(input_img)
+        ground_truth = Variable(ground_truth)
+        ground_truth_onehot = Variable(ground_truth_onehot)
         
         x_real = self._make_dis_input(input_img, ground_truth_onehot)
         y_real = self.dis(x_real)
@@ -151,8 +151,8 @@ class NonAdversarialUpdater(chainer.training.StandardUpdater, UpdaterMixin):
 
     def forward(self, batch):
         input_img, ground_truth = self.converter(batch, self.device)
-        input_img = Variable(input_img, volatile=not self.model.train)
-        self.ground_truth = Variable(ground_truth, volatile=not self.model.train)
+        input_img = Variable(input_img)
+        self.ground_truth = Variable(ground_truth)
         self.pred_label_map = self.model(input_img)
         
     def calc_loss(self):

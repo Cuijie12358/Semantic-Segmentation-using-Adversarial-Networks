@@ -1,6 +1,8 @@
 pretrained_model
 snapshot*
 result*
+snapshot_1*
+JEPGImages*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
