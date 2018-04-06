@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1842ccc-19a8-4a55-9e4b-e5e91ca12bc8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/02-train.py" afterPath="$PROJECT_DIR$/02-train.py" />
-      <change beforePath="$PROJECT_DIR$/03-inference.py" afterPath="$PROJECT_DIR$/03-inference.py" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" afterPath="$PROJECT_DIR$/LICENSE" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/dataset.py" afterPath="$PROJECT_DIR$/dataset.py" />
-      <change beforePath="$PROJECT_DIR$/extensions.py" afterPath="$PROJECT_DIR$/extensions.py" />
-      <change beforePath="$PROJECT_DIR$/functions.py" afterPath="$PROJECT_DIR$/functions.py" />
-      <change beforePath="$PROJECT_DIR$/models/__init__.py" afterPath="$PROJECT_DIR$/models/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/models/discriminators/__init__.py" afterPath="$PROJECT_DIR$/models/discriminators/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/models/discriminators/largefov.py" afterPath="$PROJECT_DIR$/models/discriminators/largefov.py" />
-      <change beforePath="$PROJECT_DIR$/models/discriminators/largefov_light.py" afterPath="$PROJECT_DIR$/models/discriminators/largefov_light.py" />
-      <change beforePath="$PROJECT_DIR$/models/discriminators/smallfov.py" afterPath="$PROJECT_DIR$/models/discriminators/smallfov.py" />
-      <change beforePath="$PROJECT_DIR$/models/discriminators/smallfov_light.py" afterPath="$PROJECT_DIR$/models/discriminators/smallfov_light.py" />
-      <change beforePath="$PROJECT_DIR$/models/discriminators/spp_discriminator.py" afterPath="$PROJECT_DIR$/models/discriminators/spp_discriminator.py" />
-      <change beforePath="$PROJECT_DIR$/models/generators/__init__.py" afterPath="$PROJECT_DIR$/models/generators/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/models/generators/fcn16s.py" afterPath="$PROJECT_DIR$/models/generators/fcn16s.py" />
-      <change beforePath="$PROJECT_DIR$/models/generators/fcn32s.py" afterPath="$PROJECT_DIR$/models/generators/fcn32s.py" />
-      <change beforePath="$PROJECT_DIR$/models/generators/fcn8s.py" afterPath="$PROJECT_DIR$/models/generators/fcn8s.py" />
-      <change beforePath="$PROJECT_DIR$/models/vgg16.py" afterPath="$PROJECT_DIR$/models/vgg16.py" />
-      <change beforePath="$PROJECT_DIR$/setup/create_vgg_chainermodel.py" afterPath="$PROJECT_DIR$/setup/create_vgg_chainermodel.py" />
-      <change beforePath="$PROJECT_DIR$/setup/download_dataset.py" afterPath="$PROJECT_DIR$/setup/download_dataset.py" />
-      <change beforePath="$PROJECT_DIR$/updater.py" afterPath="$PROJECT_DIR$/updater.py" />
-      <change beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/03-inference.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="316">
-              <caret line="84" column="48" lean-forward="true" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="50" />
+              <caret line="84" column="48" lean-forward="false" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="50" />
               <folding>
                 <element signature="e#23#54#0" expanded="true" />
               </folding>
@@ -52,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/02-train.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="36" column="60" lean-forward="true" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+              <caret line="36" column="60" lean-forward="false" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -171,7 +148,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-3" />
     <option name="width" value="1926" />
     <option name="height" value="1082" />
@@ -319,7 +296,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1617" height="1062" extended-state="6" />
+    <frame x="-3" y="0" width="1617" height="1062" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25366476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -517,7 +494,7 @@
     <entry file="file://$PROJECT_DIR$/02-train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="36" column="60" lean-forward="true" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+          <caret line="36" column="60" lean-forward="false" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -525,7 +502,7 @@
     <entry file="file://$PROJECT_DIR$/03-inference.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
-          <caret line="84" column="48" lean-forward="true" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="50" />
+          <caret line="84" column="48" lean-forward="false" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="50" />
           <folding>
             <element signature="e#23#54#0" expanded="true" />
           </folding>
