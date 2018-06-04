@@ -37,11 +37,11 @@ class FCN8s(chainer.Chain):
             score_pool4=L.Convolution2D(512, n_class, 1, stride=1, pad=0,
                 nobias=True, initialW=np.zeros((n_class, 512, 1, 1))),
             upscore2=L.Deconvolution2D(n_class, n_class, 4, stride=2,
-                nobias=True, initialW=f.bilinear_interpolation_kernel(n_class, n_class, ksize=4), use_cudnn=False),
+                nobias=True, initialW=f.bilinear_interpolation_kernel(n_class, n_class, ksize=4),),
             upscore_pool4=L.Deconvolution2D(n_class, n_class, 4, stride=2,
-                nobias=True, initialW=f.bilinear_interpolation_kernel(n_class, n_class, ksize=4), use_cudnn=False),
+                nobias=True, initialW=f.bilinear_interpolation_kernel(n_class, n_class, ksize=4),),
             upscore8=L.Deconvolution2D(n_class, n_class, 16, stride=8,
-                nobias=True, initialW=f.bilinear_interpolation_kernel(n_class, n_class, ksize=16), use_cudnn=False),
+                nobias=True, initialW=f.bilinear_interpolation_kernel(n_class, n_class, ksize=16),),
         )
 
     def __call__(self, x):
@@ -64,9 +64,9 @@ class FCN8s(chainer.Chain):
         h = F.relu(self.conv5_3(h))
         h = F.max_pooling_2d(h, 2, stride=2, pad=0)
         h = F.relu(self.fc6(h))
-        h = F.dropout(h, ratio=.5, train=self.train)
+        h = F.dropout(h, ratio=.5)
         h = F.relu(self.fc7(h))
-        h = F.dropout(h, ratio=.5, train=self.train)
+        h = F.dropout(h, ratio=.5)
         score_fr = self.score_fr(h)
 
         upscore2 = self.upscore2(score_fr)

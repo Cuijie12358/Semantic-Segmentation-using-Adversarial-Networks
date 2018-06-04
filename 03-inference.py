@@ -42,7 +42,7 @@ class Inferencer(object):
         x_data = np.array([datum], dtype=np.float32)
         if self.gpu >= 0:
             x_data = chainer.cuda.to_gpu(x_data, device=self.gpu)
-        x = chainer.Variable(x_data, volatile=False)
+        x = chainer.Variable(x_data)
         label = self._infer(x)
         return img, label
 
@@ -74,7 +74,7 @@ def main():
     }
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--gpu', default=0, type=int,
+    parser.add_argument('--gpu', default=1, type=int,
                         help='if -1, use cpu only (default: 0)')
     parser.add_argument('-s', '--segmentor', choices=segmentors.keys(), default='fcn32s',
                         help='Segmentor arch')

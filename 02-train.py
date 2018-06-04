@@ -34,7 +34,7 @@ def parse_args(generators, discriminators, updaters):
                         help='Number of images in each mini-batch')
     parser.add_argument('--iteration', '-i', type=int, default=100000,
                         help='Number of sweeps over the dataset to train')
-    parser.add_argument('--gpu', '-g', type=int, default=-1,
+    parser.add_argument('--gpu', '-g', type=int, default=1,
                         help='GPU ID (negative value indicates CPU)')
     parser.add_argument('--out', '-o', default='snapshot',
                         help='Directory to output the result')
@@ -67,9 +67,9 @@ def main():
         'fcn8s': (FCN8s, FCN16s, 1e-14),
     }
     discriminators = {
-        'largefov': (LargeFOV, LargeFOV, 1e-5, 0.4), # (model, initmodel, learning_rate, L_bce_weight)
-        'largefov-light': (LargeFOVLight, LargeFOVLight, 1, 1.0),
-        'smallfov': (SmallFOV, SmallFOV, 0.1, 0.1),
+        'largefov': (LargeFOV, LargeFOV, 1e-5, 0.9), # (model, initmodel, learning_rate, L_bce_weight)
+        'largefov-light': (LargeFOVLight, LargeFOVLight, 1e-7, 0.9),
+        'smallfov': (SmallFOV, SmallFOV, 1e-5, 0.9),
         'smallfov-light': (SmallFOVLight, SmallFOVLight, 0.2, 1.0),
         'sppdis': (SPPDiscriminator, SPPDiscriminator, 0.1, 1.0),
     }

@@ -35,9 +35,9 @@ class FCN16s(chainer.Chain):
             score_pool4=L.Convolution2D(512, n_class, 1, stride=1, pad=0,
                 nobias=True, initialW=np.zeros((n_class, 512, 1, 1))),
             upscore2=L.Deconvolution2D(n_class, n_class, 4, stride=2,
-                nobias=True, initialW=f.bilinear_interpolation_kernel(n_class, n_class, ksize=4), use_cudnn=False),
+                nobias=True, initialW=f.bilinear_interpolation_kernel(n_class, n_class, ksize=4),),
             upscore16=L.Deconvolution2D(n_class, n_class, 32, stride=16,
-                nobias=True, initialW=f.bilinear_interpolation_kernel(n_class, n_class, ksize=32), use_cudnn=False),
+                nobias=True, initialW=f.bilinear_interpolation_kernel(n_class, n_class, ksize=32),),
         )
 
     def __call__(self, x):

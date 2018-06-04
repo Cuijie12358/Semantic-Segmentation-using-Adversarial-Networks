@@ -1,7 +1,10 @@
+bus_result/*
+COCO/*
 pretrained_model
 snapshot*
 result*
-snapshot_1*
+Small*
+testdata*
 #JPEGImages*
 
 # Byte-compiled / optimized / DLL files
